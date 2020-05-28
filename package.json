@@ -1,16 +1,22 @@
 {
-  "name": "redux",
+  "name": "reduxstudy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranay-chauhan/redux.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranay-chauhan/redux/issues"
+  },
+  "homepage": "https://github.com/pranay-chauhan/redux#readme",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-redux": "^7.2.0"
+    "redux": "^4.0.5"
   }
 }

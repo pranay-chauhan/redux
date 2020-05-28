@@ -1,4 +1,4 @@
-console.log('In Index.js');
+
 //Redux is state management library for javascript apps in a predictable fashion.
 
 //The following three are important concept in react as follows-
@@ -23,12 +23,12 @@ Shopkeepar============Reducer========Ties the store and action together
 
     2.The only way to change the state is to emit an action, an object decribing what happend
 
-    3.To update the state of your application write pure reducers  
+    3.To update the state of your application write pure reducers
 
 */
 
 /*
-    1.Action 
+    1.Action
     ==>The only way your application to interact with store
     ==>It is plain Javascript object
     ==>Have 'type' property that indicate type of action to be perfomed
@@ -43,7 +43,8 @@ Shopkeepar============Reducer========Ties the store and action together
 Also the Action creator function return an action
 */
 
-
+const redux = require('redux');
+const createStore = redux.createStore
 const BUY_CAKE = 'BUY_CAKE'
 
 function buyCake(){
@@ -74,3 +75,24 @@ const reducer = (state=initialState,action)=>{
         default:return state
     }
 }
+
+
+//3.Store
+/*
+    Responsibilities
+    1.Holds application state
+    2.Allow to access to state via getState()
+    3.Allow state to be updated via dispatch(action)
+    4.Register listner via subscibe
+    5.Handle unregistring of listners via the fuction returned by sunscibe (listner)
+*/
+
+const store = createStore(reducer);
+console.log('Initial State',store.getState);
+const unscribe = store.subscribe(()=>console.log('upadated state',store.getState()))
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+store.dispatch(buyCake())
+unscribe()
